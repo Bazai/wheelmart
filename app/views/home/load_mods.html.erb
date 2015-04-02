@@ -1,0 +1,5 @@
+<option value='mod'>Модификация</option>
+
+<% @mods.each do |mod| %>
+  <option data-id='<%= mod.id %>' value="<%= mod.name %>"><%= mod.name %></option>
+<% end %>

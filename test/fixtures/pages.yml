@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  header: MyText
+  counter: 2013-11-19 17:44:12
+  action: MyString
+
+two:
+  header: MyText
+  counter: 2013-11-19 17:44:12
+  action: MyString

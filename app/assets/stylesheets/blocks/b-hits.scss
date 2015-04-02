@@ -1,0 +1,90 @@
+.b-hits {
+  margin-top: 85px;
+}
+
+.b-hits__header {
+  font-size: 41px;
+}
+
+.b-hits__wrap {
+  text-align: center;
+  background-color: #e7e9eb;
+}
+
+.b-hit {
+  width: 281px;
+  margin-right: 48px;
+  padding: 35px 0;
+  text-align: center;
+}
+
+.b-hit_right {
+  margin-right: 0;
+}
+
+.b-hit__header {
+  margin: 0;
+  height: 30px;
+  font-size: 20px;
+}
+
+.b-hit__header-color {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.b-hit__wrap {
+  margin-top: 10px;
+  padding: 18px 14px 30px;
+  @include background-asset("obvod.png", no-repeat center top);
+}
+
+.b-hit__wrap_active {
+  .b-hit__img-img {opacity: 0.2}
+  @include background-asset("obvod_active.png", no-repeat center top);
+}
+
+.b-hit__image {
+  width: 253px;
+  height: 253px;
+  background-color: #fff;
+  text-decoration: none;
+  @include border-radius(150px);
+}
+
+.b-hit__img {
+  width: 253px;
+  height: 253px;
+  background-color: #fff;
+  text-decoration: none;
+  @include border-radius(150px);
+  border: 0;
+}
+
+.b-hit__img-img {
+  @include border-radius(150px);
+  border: 0;
+}
+
+.b-hit__text {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.b-hit__price {
+  font-size: 27px;
+  font-weight: 700;
+  color: #d23f39;
+}
+
+.b-hit__rub {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #d23f39;
+}
+
+.b-hits_bottom {
+  height: 18px;
+  margin-top: 6px;
+  background-color: #e7e9eb;
+}

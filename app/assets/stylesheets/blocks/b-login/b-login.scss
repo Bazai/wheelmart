@@ -1,0 +1,8 @@
+.b-login {
+  width: 300px;
+  margin: 60px auto 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  @include border-radius(5px);
+}

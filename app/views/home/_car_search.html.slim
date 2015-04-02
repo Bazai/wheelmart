@@ -1,0 +1,21 @@
+.g-out.b-inline.b-catalogs__group
+  select.optiongroup.marks
+    option value='mark' Марка авто
+    - @marks.each do |mark|
+      option data-id="#{mark.id}" value="#{mark.name}"
+        = mark.name
+
+.g-out.b-inline.b-catalogs__group
+  select.optiongroup.models disabled='disabled'
+    option value='model' Модель
+
+.g-out.b-inline.b-catalogs__group
+  select.optiongroup.years disabled='disabled'
+    option value='god' Год
+
+.g-out.b-inline.b-catalogs__group
+  select.optiongroup.mods disabled='disabled'
+    option value='engine' Двигатель
+
+
+input.b-inline.b-catalogs__input.b-catalogs__car-calc type='submit' name='vote' onclick="yaCounter25849658.reachGoal('click_select'); return true"  value='Подобрать'

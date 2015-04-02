@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  width: 1.5
+  diameter_diska: 1.5
+  bolt_count: 1
+  bolt_distance: 1.5
+  et: 1.5
+  diameter: 1.5
+
+two:
+  width: 1.5
+  diameter_diska: 1.5
+  bolt_count: 1
+  bolt_distance: 1.5
+  et: 1.5
+  diameter: 1.5

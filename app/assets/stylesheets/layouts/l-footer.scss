@@ -1,0 +1,6 @@
+.l-footer {
+  margin: 0;
+  padding-bottom: 80px;
+  @include background-asset("footer/fon.jpg", no-repeat center top);
+  color: #fff;
+}

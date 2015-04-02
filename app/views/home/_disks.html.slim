@@ -1,0 +1,110 @@
+- row_count = 0
+- row = 0
+- last = disks.last
+
+.b-catalogs__diameter-links
+  - if @diameters
+    = link_to 'Все', '#', class: "b-catalogs__diameter-link#{' b-catalogs__diameter-link_active' unless @d}"
+
+    - @diameters.each do |d|
+      = link_to d, '#', data: {d: d}, class: "b-catalogs__diameter-link#{' b-catalogs__diameter-link_active' if d == @d}"
+
+- sliced_disks = disks[0..(9*(params[:page] || 1).to_i)-1]
+
+- sliced_disks.each do |disk|
+  - if disk.brand
+    - if row_count == 0
+      <div class="b-selection__wrap">
+        <div class="l-base">
+    figure.b-inline.b-selection.js-diameter class="#{'b-selection_right' if row_count == 2}" data-d="#{disk.diameter}" id="figure-#{row}"
+      span.b-block.b-hit__header
+        = disk.brand.name
+
+      span.b-block.b-hit__header-color
+        - unless disk.color.empty?
+          = "(#{disk.color.strip})"
+
+      .b-block.b-hit__wrap
+        a.b-block.b-hit__img[href='#'
+          data-figure="#{row}"
+          data-image="#{disk.brand.image.url}"
+          data-name="#{disk.brand.name}"
+          data-width="#{disk.width}"
+          data-diametr="#{disk.diameter_diska}"
+          data-boom="#{disk.et}"
+          data-fixture="#{disk.bolt_count}x#{disk.bolt_distance}"
+          data-hole="#{disk.diameter}"
+          data-old-price="#{price(disk.old_price)}"
+          data-new-price="#{price(disk.new_price)}"
+          data-id="#{disk.id}"
+          data-color="#{disk.color}"]
+          = image_tag disk.brand.image.middle.url, width: 253, height: 253, class: 'b-block b-hit__img-img'
+
+      .b-inline.b-selection__footer_left
+        span.b-block.b-selection__footer-new-price= price(disk.price)
+        span.b-block.b-selection__footer-rub руб.
+
+      .b-inline.b-selection__footer_right
+        a.b-block.b-selection__buy href='#' onclick="yaCounter25849658.reachGoal('click_buy'); return true" data-id="#{disk.id}" Купить
+        a.b-block.b-selection__reservation href='#' onclick="yaCounter25849658.reachGoal('click_order'); return true" data-id="#{disk.id}" Забронировать
+
+    - if row_count == 2 || last == disk
+      </div>
+      figure.b-block.b-selection__info id="figure-#{row}"
+        .l-base
+          .b-inline.b-selection__info-img
+            = image_tag 'disc/disc-1.jpg', width: 424, height: 424, class: 'b-block image'
+          .b-inline.b-selection__info-right
+            h5.b-inline.b-selection__info-header.name
+            .b-selection__info-color.color
+            a.b-inline.b-selection__info-close href='#'
+            .b-block.b-selection__info-wrap
+              table.b-inline.b-selection__info-table
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Ширина
+                  td.b-selection__info-td.width.noui
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Диаметр
+                  td.b-selection__info-td.diametr
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Вылет
+                  td.b-selection__info-td.boom
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Крепеж
+                  td.b-selection__info-td.fixture
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Центральное отверстие
+                  td.b-selection__info-td.hole
+
+              .b-inline.b-selection__info_right
+                span.b-selection__info_right-header Стоимость
+                span.b-block.b-selection__footer-new-price.b-selection__info-new-price.new-price
+                span.b-block.b-selection__footer-rub.b-selection__info-rub руб.
+
+            a.b-inline.b-selection__reservation.b-selection__info-reservation href='#' data-id="#{disk.id}" Забронировать
+            a.b-inline.b-selection__buy.b-selection__info-buy href='#' data-type='tyre'  data-id="#{disk.id}" Купить
+
+
+      .l-base.b-selection__border-bottom
+      </div>
+    - row_count += 1
+    - if row_count == 3 || last == disk
+      - row_count = 0
+      - row += 1
+
+
+div.b-block.b-selection__more_wrap
+  .l-base
+    - if (disks.count > 9) && (params[:page].to_i < disks.count/9.0)
+      .b-inline.b-selection__more-center
+        span.b-inline Показано #{sliced_disks.count} из #{disks.count} дисков
+        - if @diameters
+          a.b-block.b-selection__more-center_button.b-selection__more-disks href='#' Показать еще
+        - else
+          a.b-block.b-selection__more-center_button.b-selection__more-disks data-params='true' href='#' Показать еще
+
+    a.b-inline.b-selection__more-back href='#catalogs' Вернуться к подбору

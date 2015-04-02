@@ -1,0 +1,2 @@
+module TyresHelper
+end

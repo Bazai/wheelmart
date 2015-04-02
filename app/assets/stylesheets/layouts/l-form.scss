@@ -1,0 +1,28 @@
+.l-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.75);
+}
+
+.l-form_active_buy {
+  display: block;
+  .b-form__header_buy {display: inline-block}
+  .b-form__header_reservation {display: none}
+}
+
+.b-form__header_reservation {
+  display: block;
+  .b-form__header_buy {display: none}
+  .b-form__header_reservation {display: inline-block}
+}
+
+.l-form_finished {
+  display: block;
+}
+
+.l-form_finished_hide {
+  display: none;
+}

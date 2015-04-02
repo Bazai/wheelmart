@@ -1,0 +1,13 @@
+.l-login
+  .l-login__header
+    = t :forgot_your_password
+  .b-login
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+
+      = f.label :email, class: 'b-login__label'
+      = f.email_field :email, autofocus: true, class: 'b-login__field'
+
+      = f.submit t(:send_me_reset_password_instructions), class: 'b-login__submit'
+
+    = render 'devise/shared/links'

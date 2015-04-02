@@ -1,0 +1,39 @@
+<h1>Все диски</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Ширина</th>
+      <th>Диаметр диска</th>
+      <th>Количество болтов</th>
+      <th>Расстояние между болтами</th>
+      <th>Вылет</th>
+      <th>Диаметр</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disks.each do |disk| %>
+      <tr>
+        <td><%= disk.name %></td>
+        <td><%= disk.width %></td>
+        <td><%= disk.diameter_diska %></td>
+        <td><%= disk.bolt_count %></td>
+        <td><%= disk.bolt_distance %></td>
+        <td><%= disk.et %></td>
+        <td><%= disk.diameter %></td>
+        <td><%= link_to 'Показать', disk %></td>
+        <td><%= link_to 'Редактировать', edit_disk_path(disk) %></td>
+        <td><%= link_to 'Удалить', disk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить диск', new_disk_path %>

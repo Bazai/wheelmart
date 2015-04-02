@@ -1,0 +1,24 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: wheelmart_development
+  username: <%= Rails.application.secrets.db_user %>
+  password: <%= Rails.application.secrets.db_password %>
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: wheelmart_test
+  username: <%= Rails.application.secrets.db_user %>
+  password: <%= Rails.application.secrets.db_password %>
+  host: localhost
+  port: 5432

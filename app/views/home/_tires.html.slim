@@ -1,0 +1,95 @@
+- row_count = 0
+- row = 0
+- last = tires.last
+
+.b-catalogs__diameter-links
+  - if @diameters
+    = link_to 'Все', '#', class: "b-catalogs__diameter-link#{' b-catalogs__diameter-link_active' unless @d}"
+
+    - @diameters.each do |d|
+      = link_to d, '#', data: {d: d}, class: "b-catalogs__diameter-link#{' b-catalogs__diameter-link_active' if d == @d}"
+
+- sliced_tires = tires[0..(9*(params[:page] || 1).to_i)-1]
+
+- sliced_tires.each do |tire|
+  - if tire.full_name
+    - if row_count == 0
+      <div class="b-selection__wrap">
+        <div class="l-base">
+    figure.b-inline.b-selection.js-diameter class="#{'b-selection_right' if row_count == 2}" data-d="#{tire.diameter}" id="figure-#{row}"
+      span.b-block.b-hit__header
+        = tire.brand_name + ' ' + tire.name
+
+
+      .b-block.b-hit__wrap
+        a.b-block.b-hit__img[href='#'
+          data-figure="#{row}"
+          data-name="#{tire.brand_name}"
+          data-image="#{image_path('src_r2suv.jpg')}"
+          data-height="#{tire.height}"
+          data-new-price="#{tire.price}"
+          data-diametr="#{tire.diameter}"
+          data-width="#{tire.width}"]
+          = image_tag 'src_r2suv.jpg', class: 'b-block b-hit__img-img tire-image-sm'
+
+      .b-inline.b-selection__footer_left
+        span.b-block.b-selection__footer-new-price= price(tire.price)
+        span.b-block.b-selection__footer-rub руб.
+
+      .b-inline.b-selection__footer_right
+        a.b-block.b-selection__buy href='#' onclick="yaCounter25849658.reachGoal('click_buy'); return true" data-type='tyre' data-id="#{tire.id}" Купить
+        a.b-block.b-selection__reservation href='#' onclick="yaCounter25849658.reachGoal('click_order'); return true" data-id="#{tire.id}" Забронировать
+
+    - if row_count == 2 || last == tire
+      </div>
+      figure.b-block.b-selection__info id="figure-#{row}"
+        .l-base
+          .b-inline.b-selection__info-img
+            = image_tag 'src_r2suv.jpg', class: 'b-block image tire-image'
+          .b-inline.b-selection__info-right
+            h5.b-inline.b-selection__info-header.name
+            .b-selection__info-color.color
+            a.b-inline.b-selection__info-close href='#'
+            .b-block.b-selection__info-wrap
+              table.b-inline.b-selection__info-table
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Диаметр
+                  td.b-selection__info-td.diametr
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Ширина
+                  td.b-selection__info-td.width.noui
+
+                tr.b-selection__info-tr
+                  th.b-selection__info-th Высота
+                  td.b-selection__info-td.height.noui
+
+
+              .b-inline.b-selection__info_right
+                span.b-selection__info_right-header Стоимость
+                span.b-block.b-selection__footer-new-price.b-selection__info-new-price.new-price
+                span.b-block.b-selection__footer-rub.b-selection__info-rub руб.
+
+            a.b-inline.b-selection__reservation.b-selection__info-reservation href='#' data-id="#{tire.id}" Забронировать
+            a.b-inline.b-selection__buy.b-selection__info-buy href='#' data-type='tyre' data-id="#{tire.id}" Купить
+
+
+      .l-base.b-selection__border-bottom
+      </div>
+    - row_count += 1
+    - if row_count == 3 || last == tire
+      - row_count = 0
+      - row += 1
+
+
+div.b-block.b-selection__more_wrap
+  .l-base
+    - if (tires.count > 9) && (params[:page].to_i < tires.count/9.0)
+      .b-inline.b-selection__more-center
+        span.b-inline Показано #{sliced_tires.count} из #{tires.count} шин
+        - if @diameters
+          a.b-block.b-selection__more-center_button.b-selection__more-tires href='#' Показать еще
+        - else
+          a.b-block.b-selection__more-center_button.b-selection__more-tires data-params='true' href='#' Показать еще
+
+    a.b-inline.b-selection__more-back href='#tyre-catalog' Вернуться к подбору

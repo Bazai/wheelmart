@@ -1,0 +1,6 @@
+.l-header {
+  margin-top: 50px;
+  padding-bottom: 180px;
+  @include background-asset("header/header.png", no-repeat center top);
+  color: #fff;
+}
