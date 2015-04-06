@@ -1,0 +1,33 @@
+<h1>Listing mods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mark</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mods.each do |mod| %>
+      <tr>
+        <td><%= mod.name %></td>
+        <td><%= mod.mark %></td>
+        <td><%= mod.model %></td>
+        <td><%= mod.year %></td>
+        <td><%= link_to 'Show', mod %></td>
+        <td><%= link_to 'Edit', edit_mod_path(mod) %></td>
+        <td><%= link_to 'Destroy', mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mod', new_mod_path %>

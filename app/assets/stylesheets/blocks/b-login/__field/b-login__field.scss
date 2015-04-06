@@ -1,0 +1,10 @@
+.b-login__field {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  outline: none;
+  @include box-sizing(border-box);
+  @include border-radius(3px);
+}

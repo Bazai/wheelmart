@@ -1,0 +1,92 @@
+.l-base.b-catalogs.g-out.b-catalogs_auto-calc
+  .b-block.g-block-header
+    = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+    h2.b-inline.g-block-header__text КАТАЛОГ ШИН
+    = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+  = image_tag 'catalogs/catalogs.png', width: 940, height: 74, class: 'b-inline b-benefits__img'
+  h3.b-catalogs__header Введите параметры своего автомобиля
+  form.g-out.b-block.b-catalogs__form
+    = render 'car_search'
+  .b-catalogs__suggestions
+
+.l-base.b-catalogs.b-catalogs_params.b-catalogs_shina.g-out
+  .b-block.g-block-header
+    = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+    h2.b-inline.g-block-header__text ИЛИ
+    = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+  h3.b-catalogs__header Введите параметры шины
+  form.g-out.b-block.b-catalogs__form#tpf action='/tires'
+    .g-out.b-inline.b-catalogs__group
+      select.optiongroup.width
+        option value='width' Ширина
+        - ['6','6.5','7','7.5','9.5','30','31','32','33','35','37','120','135','145','155','160','165','175','185','190','195','205','215','225','235','245','255','265','275','285','295','305','315','325','335'].each do |width|
+          option data-id="#{width}" value="#{width}"
+            = width
+
+
+    .g-out.b-inline.b-catalogs__group
+      select.optiongroup.height
+        option value='height' Высота
+        - ['9.5','10.5','11.5','12.5','25','30','35','40','45','50','55','60','65','70','75','80','85','90'].each do |height|
+          option data-id="#{height}" value="#{height}"
+            = height
+
+    .g-out.b-inline.b-catalogs__group
+      select.optiongroup.tyre-diameter
+        option value='diameter' Диаметр
+        - ['12','13','14','15','16','17','18','19','20','21','22'].each do |d|
+          option data-id="#{d}"  value="#{d}"
+            = "#{d}"
+
+    .g-out.b-inline.b-catalogs__group
+      select.optiongroup.season
+        option value='season' Сезонность
+        - [['0','летние'],['1','зимние'],['2','всесезонные']].each do |season|
+          option data-id="#{season[0]}" value="#{season[0]}"
+            = season[1]
+
+
+
+    input.b-inline.b-catalogs__input.b-catalogs__tyre-cat data-params='true' type='submit' name='vote' onclick="yaCounter25849658.reachGoal('click_select'); return true"  value='Подобрать'
+    .b-block.b-catalogs__superform
+      .b-catalogs_price
+        div
+          span Цена:
+        .b-form_input-group
+          .input-group-addon От
+          input#tpl type='text' name='price_low' data-click-empty='1000'
+        .b-form_input-group
+          .input-group-addon До
+          input#tph type='text' name='price_high' data-click-empty='100000'
+        .b-form__price-bar.l-col-6
+          #tire-price-bar
+        div
+          input type='checkbox' name='only_present' id='opc'
+          label for='opc'
+            span
+            = "Выводить товары в наличии"
+      h3 Производитель
+      .l-row
+        .l-col.l-col-11
+          ul.b-form__brand-list
+            - TireBrandList.all_lol_edition.each_with_index do |brand, i|
+              li
+                input type='checkbox' name='brands[]' value="#{brand[0]}" id="tchk_#{i}"
+                label for="tchk_#{i}"
+                  span
+                  = brand[1]
+        .l-col.l-col-4
+          input.b-inline.b-catalogs__input.b-catalogs__find_tire type='submit' value='Подобрать шины' data-params='true'
+          div
+            = link_to 'Очистить форму и начать заново', '#', class: 'b-form_action-link'
+
+  span.b-block.b-catalogs__drop Загрузка...
+
+
+.b-selection__more.tyre-selection__more
+  .b-selection__wrap_wrap
+
+    = render partial: 'home/tires', locals: {tires: @tires}
+

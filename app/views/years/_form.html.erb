@@ -1,0 +1,29 @@
+<%= form_for(@year) do |f| %>
+  <% if @year.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@year.errors.count, "error") %> prohibited this year from being saved:</h2>
+
+      <ul>
+      <% @year.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :mark %><br>
+    <%= f.text_field :mark %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

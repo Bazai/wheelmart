@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diameter: 1.5
+  width: 1.5
+  height: 1.5
+  full_name: MyString
+  price: 1
+  season: MyString
+  brand_name: MyString
+  name: MyString
+  spikes: MyString
+  speed: MyString
+
+two:
+  diameter: 1.5
+  width: 1.5
+  height: 1.5
+  full_name: MyString
+  price: 1
+  season: MyString
+  brand_name: MyString
+  name: MyString
+  spikes: MyString
+  speed: MyString

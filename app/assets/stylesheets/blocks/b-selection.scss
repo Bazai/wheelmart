@@ -1,0 +1,251 @@
+.b-selection__wrap {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  .b-selection__info{display: none}
+}
+
+.b-selection__wrap_active {
+  .b-selection__info{display: block}
+  .b-selection__footer_left{display: none}
+  .b-selection__footer_right{display: none}
+}
+
+.b-selection {
+  width: 281px;
+  margin: 0 48px 0 0;
+  text-align: center;
+}
+
+.b-selection_right {
+  margin: 0;
+}
+
+.b-selection__footer_left {
+  width: 120px;
+  padding-right: 20px;
+  color: #d23f39;
+  text-align: right;
+}
+
+.b-selection__footer-old-price {
+  font-size: 17px;
+  text-decoration: line-through;
+}
+
+.b-selection__footer-new-price {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.b-selection__footer-rub {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.b-selection__buy {
+  padding: 8px 40px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 2px 1px #b63f3b;
+  background-color: #ef5650;
+  box-shadow: inset 0 -1px 1px #ba241d;
+  @include border-radius(20px);
+
+  &:hover{
+    color: #fff;
+    @include gradient-vertical(#ef5650, #b63f3b);
+  }
+}
+
+.b-selection__reservation {
+  margin-top: 8px;
+  padding: 8px 12px;
+  color: #ff4747;
+  text-decoration: none;
+  border: 1px solid #ffbfbc;
+  @include border-radius(20px);
+  background-color: #fff;
+
+  &:hover{
+    color: #ff4747;
+    @include gradient-vertical(#fff, #e6e6e6);
+    border-color: #d6d6d6;
+  }
+}
+
+///////////////////////////////////////////
+
+
+.b-selection__info {
+  margin: 0;
+  padding: 50px 0 0;
+  background-color: #fff;
+}
+
+.b-selection__info-img {
+  width: 400px;
+  padding-right: 50px;
+}
+
+.b-selection__info-right {
+  width: 490px;
+  text-align: left;
+}
+
+.b-selection__info-header {
+  width: 280px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.b-selection__info-color {
+  color: #555;
+}
+
+.b-selection__info-close {
+  float: right;
+  width: 26px;
+  height: 26px;
+  margin-top: 5px;
+  text-decoration: none;
+  @include background-asset("catalogs/close.png", no-repeat center center);
+}
+
+////////////////////////////////
+
+.b-selection__info-wrap {
+  margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px dotted #858585;
+  border-bottom: 1px dotted #858585;
+}
+
+.b-selection__info-table {
+  width: 300px;
+  margin-right: 50px;
+  font-size: 14px;
+}
+
+.b-selection__info-tr {
+  height: 30px;
+}
+
+.b-selection__info-th {
+  width: 200px;
+  text-align: left;
+}
+
+.b-selection__info-td {
+  width: 150px;
+  text-align: right;
+}
+
+////////////////////////
+
+.b-selection__info_right {
+  color: #d23f39;
+}
+
+.b-selection__info_right-header {
+  font-size: 12px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.b-selection__info-old-price {
+  font-size: 22px;
+}
+
+.b-selection__info-new-price {
+  font-size: 35px;
+}
+
+.b-selection__info-rub {
+  font-size: 19px;
+}
+
+///////////
+
+.b-selection__info-reservation {
+  margin: 0 0 0 215px;
+}
+
+.b-selection__info-buy {
+  float: right;
+  margin: 0;
+}
+
+
+/////////////////
+
+
+.b-selection__border-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+
+////////////////////////////////
+
+.b-selection__more {
+  margin-top: 30px;
+}
+
+.b-selection__more_wrap {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.b-selection__more-center {
+  left: 100px;
+  font-size: 13px;
+  color: #4c4c4c;
+}
+
+.b-selection__more-center_bold {
+  font-weight: 700;
+}
+
+.b-selection__more-center_button {
+  margin-top: 15px;
+  padding: 8px 60px;
+  font-size: 15px;
+  text-decoration: none;
+  background-color: #484f56;
+  box-shadow: inset 0 -1px 1px #000;
+  @include border-radius(40px);
+  color: #fff;
+
+  &:hover{
+    color: #fff;
+    @include gradient-vertical(#687279, #484f56);
+  }
+}
+
+.b-selection__more-back {
+  float: right;
+  margin-top: 39px;
+  padding: 5px 12px 5px 30px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #575c60;
+  border: 1px solid #bfc1c2;
+  @include border-radius(30px);
+  @include background-asset("catalogs/back.png", no-repeat left center);
+  &:hover {
+    color: #575c60;
+    border-color: #ce251d;
+  }
+}
+
+
+.b-selection__no-found {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.b-selection_transparent {
+  opacity: 0.5;
+}

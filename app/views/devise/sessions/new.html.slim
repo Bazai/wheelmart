@@ -1,0 +1,15 @@
+.l-login
+  .b-login
+    = flash.notice
+    = flash.alert
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.label :email, class: 'b-login__label'
+      = f.email_field :email, autofocus: true, class: 'b-login__field'
+
+      = f.label :password, class: 'b-login__label'
+      = f.password_field :password, autocomplete: 'off', class: 'b-login__field'
+
+      = f.submit 'Войти', class: 'b-login__submit'
+
+    = render 'devise/shared/links'

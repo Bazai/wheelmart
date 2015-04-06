@@ -1,0 +1,68 @@
+.b-how-we-work {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.b-how-we-work__point {
+  width: 130px;
+  margin: 0;
+  padding-top: 90px;
+  font-size: 15px;
+}
+
+.b-how-we-work__point-1 {
+  @include background-asset("how-we-work/img-1.png", no-repeat center top);
+}
+
+.b-how-we-work__point-2 {
+  @include background-asset("how-we-work/img-2.png", no-repeat center top);
+}
+
+.b-how-we-work__point-3 {
+  @include background-asset("how-we-work/img-3.png", no-repeat center top);
+}
+
+.b-how-we-work__point-4 {
+  @include background-asset("how-we-work/img-4.png", no-repeat center top);
+}
+
+.b-how-we-work__point-5 {
+  @include background-asset("how-we-work/img-5.png", no-repeat center top);
+}
+
+.b-how-we-work__arrow {
+  margin: 30px 23px;
+  border: 0;
+}
+
+.b-how-we-work__warranty {
+  margin-top: 30px;
+  padding: 30px 90px;
+  border: 1px solid #fff;
+  @include border-radius(40px);
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+  @include gradient-vertical(#f3f3f3, #fff);
+}
+
+.b-how-we-work__warranty-arrow {
+  margin-top: 40px;
+  border: 0;
+}
+
+.b-how-we-work__warranty-text {
+  width: 420px;
+  padding: 0 30px;
+  color: #424650;
+}
+
+.b-how-we-work__warranty-text_header {
+  margin: 0;
+  padding: 0 30px;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.b-how-we-work__warranty-text_text {
+  margin: 10px 0 0;
+  font-size: 14px;
+}

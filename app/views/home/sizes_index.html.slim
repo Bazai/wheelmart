@@ -1,0 +1,9 @@
+.b-catalogs__suggestions-panel
+	h3 Рекомендуемые шины
+	- @mod.tyre_sizes.all.each do |size|
+		= link_to size, 'javascript:void(0)', data: { params_setter: true, tire_params: true, size: size.to_json }
+.b-catalogs__suggestions-panel
+	h3 Рекомендуемые диски
+	- @mod.sizes.all.each do |size|
+		= link_to size, 'javascript:void(0)', data: { params_setter: true, disk_params: true, size: size.to_json }
+

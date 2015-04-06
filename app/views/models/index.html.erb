@@ -1,0 +1,27 @@
+<h1>Все модели</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.name %></td>
+        <td><%= link_to 'Показать', model %></td>
+        <td><%= link_to 'Редактировать', edit_model_path(model) %></td>
+        <td><%= link_to 'Удалить', model, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить модель', new_model_path %>

@@ -1,0 +1,34 @@
+.b-benefits {
+  margin-top: 50px;
+}
+
+.b-benefits__img {
+  margin-bottom: 30px;
+  border: 0;
+}
+
+////////////////////////////////
+
+.b-benefit {
+  width: 410px;
+  padding-left: 60px;
+  font-size: 18px;
+  @include background-asset("benefits/check.png", no-repeat left top);
+  color: #424650;
+}
+
+.b-benefit__header {
+  margin: 0 0 15px;
+  line-height: 1.4;
+  font-size: 18px;
+}
+
+.b-benefit__text {
+  margin: 0;
+  line-height: 1;
+}
+
+.b-benefit__line {
+  margin: 25px 0 20px;
+  border: 0;
+}

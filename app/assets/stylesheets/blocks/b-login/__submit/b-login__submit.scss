@@ -1,0 +1,26 @@
+.b-login__submit {
+  @include display-block;
+  padding: 8px;
+  margin: 0 0 15px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #ae3e22;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: #d34b2a;
+  @include gradient-vertical(#e6522e, #d34b2a);
+  @include border-radius(3px);
+
+  outline: none;
+
+  &:hover, &:focus {
+    @include gradient-vertical(#d34b2a, #e6522e);
+  }
+
+  &:active {
+    margin-top: 3px;
+    border-bottom: none;
+  }
+}

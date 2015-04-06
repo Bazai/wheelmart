@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Наименование:</strong>
+  <%= @mark.name %>
+</p>
+
+<%= link_to 'Редактировать', edit_mark_path(@mark) %> |
+<%= link_to 'Назад', marks_path %>

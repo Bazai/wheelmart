@@ -1,0 +1,21 @@
+.b-why {
+  width: 350px;
+  margin-right: 120px;
+  padding-left: 50px;
+  color: #424650;
+  @include background-asset("why/why.png", no-repeat left top);
+}
+
+.b-why_left {
+  margin-right: 0;
+}
+
+.b-why__header {
+  margin: 0;
+  font-size: 18px;
+}
+
+.b-why__text {
+  margin: 20px 0 0;
+  font-size: 15px;
+}

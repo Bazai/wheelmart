@@ -1,0 +1,380 @@
+doctype html
+html lang='ru'
+  head
+    title Wheel-Mart
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'
+    = stylesheet_link_tag 'application'
+    = yield :styles
+    = javascript_include_tag 'application'
+
+    link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'
+
+    = favicon_link_tag
+
+  body
+    = render 'scroll_to_top'
+    .b-floathead.l-base
+      nav.g-navbar
+        ul
+          li= link_to 'Главная', '#main'
+          li= link_to 'Почему мы?', '#best'
+          li= link_to 'Как мы работаем', '#fast'
+          li= link_to 'Каталог дисков', '#catalogs'
+          li= link_to 'Каталог шин', '#tyre-catalog'
+          li= link_to 'Контакты', '#contacts'
+    header.b-block.l-header.scrollto#main
+      .b-header__top
+        .l-base
+          .b-inline.b-header__logo
+            = image_tag 'logo_small.png'
+
+          .b-inline.b-header__info
+            h2.b-block.b-header__info-phone +7 (499) 994-84-54
+            .b-inline.b-header__info-address
+              span.b-block Наш адрес:
+              span.b-block.b-header__info-text Электродная ул., д.14 стр.2
+
+      .l-base
+        p.b-block.b-header__text
+          | В наличии более 7 000 шин и более 12 000 дисков с доставкой по всей РФ
+        .b-inline.b-header__action
+          h2.b-block.b-header__action-header
+            | Успей купить по старым ценам!
+          .g-out.b-block.b-header__counter
+            span.b-block.b-header__counter-header До конца акции осталось:
+            .g-out.b-block.b-header__counter-wrap
+              .b-block
+                span.b-inline.b-header__counter-wrap_text
+                  | {dnn}
+                span.b-inline.b-header__counter-wrap_text
+                  | {hnn}
+                span.b-inline.b-header__counter-wrap_text
+                  | {mnn}
+                span.b-inline.b-header__counter-wrap_text
+                  | {snn}
+
+              .b-block
+                span.b-inline.b-header__counter-wrap_sign дней
+                span.b-inline.b-header__counter-wrap_sign часов
+                span.b-inline.b-header__counter-wrap_sign минут
+                span.b-inline.b-header__counter-wrap_sign секунд
+
+        .b-inline.b-header__pick-up.b-header__pick-up_top
+          h3.b-block.b-header__pick-up-header Подберите диски по авто
+          a.b-block.b-header__button_wrap href='#catalogs'
+            .b-header__button
+              = image_tag 'header/arrow-left.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+              h4.b-inline.b-header__button-text Подобрать диски
+              = image_tag 'header/arrow-right.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+        .b-inline.b-header__pick-up.b-header__pick-up_middle
+          h3.b-block.b-header__pick-up-header Подберите шины по авто
+          a.b-block.b-header__button_wrap href='#tyre-catalog'
+            .b-header__button
+              = image_tag 'header/arrow-left.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+              h4.b-inline.b-header__button-text Подобрать шины
+              = image_tag 'header/arrow-right.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+
+  .l-base.b-benefits.scrollto#best
+    .b-block.g-block-header
+      = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+      h2.b-inline.g-block-header__text НАШИ ПРЕИМУЩЕСТВА
+      = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+    = image_tag 'benefits/benefits.png', width: 940, height: 74, class: 'b-inline b-benefits__img'
+    .b-inline.b-benefit
+      h5.b-block.b-benefit__header 11 лет на рынке
+      p.b-block.b-benefit__text У нас большой опыт работы в сфере  автомобильных дисков.
+      = image_tag 'benefits/line.png', width: 52, height: 1, class: 'b-inline b-benefit__line'
+    .b-inline.b-benefit
+      h5.b-block.b-benefit__header 12 000 наименований товара
+      p.b-block.b-benefit__text Диски для всех марок и моделей автомобилей.
+      = image_tag 'benefits/line.png', width: 52, height: 1, class: 'b-inline b-benefit__line'
+    .b-inline.b-benefit
+      h5.b-block.b-benefit__header 27 производителей
+      p.b-block.b-benefit__text КиК, OZ racing, BBS, Antera, M&K и многие другие бренды собранные в одном месте.
+    .b-inline.b-benefit
+      h5.b-block.b-benefit__header Доставка от 1 до 7 дней
+      p.b-block.b-benefit__text Мы работаем с самой крупной транспортной компанией — ПЭК.
+
+  /<!--<div class="l-base b-problems">-->
+  /  <!--<div class="b-block g-block-header">-->
+  /    <!--<%= image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow' %>-->
+  /    <!--<h2 class="b-inline g-block-header__text">ТИПОВЫЕ ПРОБЛЕМЫ ПРИ ВЫБОРЕ ДИСКОВ</h2>-->
+  /    <!--<%= image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow' %>-->
+  /  <!--</div>-->
+  /  <!--<%= image_tag 'prblems/problems.png', width: 940, height: 74, class: 'b-inline b-benefits__img' %>-->
+  /  <!--<div class="b-inline b-problem">-->
+  /    <!--<h5 class="b-block b-problem__header">Незнание, какие<br>нужны диски</h5>-->
+  /    <!--<p class="b-block b-problem__text">Ширина, R, ET, Dia, PCD — все эти параметры играют Важную роль при подборе дисков. И их обязательно нужно учитывать.</p>-->
+  /  <!--</div><div class="b-inline b-problem">-->
+  /      <!--<h5 class="b-block b-problem__header">Маленький<br>выбор</h5>-->
+  /      <!--<p class="b-block b-problem__text">Многие магазины не позволяют себе содержать большой ассортимент, что уменьшает шанс выбрать то, что нравится.</p>-->
+  /    <!--</div><div class="b-inline b-problem">-->
+  /      <!--<h5 class="b-block b-problem__header">Не правильно<br>подобранные диски</h5>-->
+  /      <!--<p class="b-block b-problem__text">Ширина, R, ET, Dia, PCD — хотя бы один не правильно подобранный параметр повлечет за собой ряд неприятных следствий, вплоть до разрушения подвески автомобиля.</p>-->
+  /    <!--</div>-->
+  /<!--</div>-->
+
+  .l-base.b-how-we-work.scrollto#fast
+    .b-block.g-block-header
+      = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+      h2.b-inline.g-block-header__text КАК МЫ РАБОТАЕМ
+      = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+    = image_tag 'how-we-work/how-we-work.png', width: 940, height: 74, class: 'b-inline b-benefits__img'
+    h5.b-inline.b-how-we-work__point.b-how-we-work__point-1 Подбираете диски по&nbsp;авто онлайн
+    = image_tag 'how-we-work/arrow.png', width: 17, height: 12, class: 'b-inline b-how-we-work__arrow'
+    h5.b-inline.b-how-we-work__point.b-how-we-work__point-2 Выбираете диски, которые Вам понравились
+    = image_tag 'how-we-work/arrow.png', width: 17, height: 12, class: 'b-inline b-how-we-work__arrow'
+    h5.b-inline.b-how-we-work__point.b-how-we-work__point-3 Оформляем  заказ
+    = image_tag 'how-we-work/arrow.png', width: 17, height: 12, class: 'b-inline b-how-we-work__arrow'
+    h5.b-inline.b-how-we-work__point.b-how-we-work__point-4 Отправляем Вам Ваши диски
+    = image_tag 'how-we-work/arrow.png', width: 17, height: 12, class: 'b-inline b-how-we-work__arrow'
+    h5.b-inline.b-how-we-work__point.b-how-we-work__point-5 Вы&nbsp;получаете свои новые диски и&nbsp;рекомендуете нас друзьям.
+    .b-block.b-how-we-work__warranty
+      = image_tag 'how-we-work/arrow-left.png', width: 111, height: 56, class: 'b-inline b-how-we-work__warranty-arrow'
+      .b-inline.b-how-we-work__warranty-text
+        h4.b-block.b-how-we-work__warranty-text_header 100% гарантия&nbsp;возврата
+        p.b-block.b-how-we-work__warranty-text_text Если товар окажется непригодным к&nbsp;использованию, МЫ&nbsp;ВЕРНЕМ ДЕНЬГИ.
+
+      = image_tag 'how-we-work/arrow-right.png', width: 111, height: 56, class: 'b-inline b-how-we-work__warranty-arrow'
+
+  .scrollto#catalogs
+    .l-base.b-catalogs.g-out.b-catalogs_auto-calc
+      .b-block.g-block-header
+        = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+        h2.b-inline.g-block-header__text КАТАЛОГ ДИСКОВ
+        = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+      = image_tag 'catalogs/catalogs.png', width: 940, height: 74, class: 'b-inline b-benefits__img'
+      h3.b-catalogs__header Введите параметры своего автомобиля
+      form.g-out.b-block.b-catalogs__form
+        = render 'car_search'
+      .b-catalogs__suggestions
+    .l-base.b-catalogs.b-catalogs_params.g-out
+      .b-block.g-block-header
+        = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+        h2.b-inline.g-block-header__text ИЛИ
+        = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+      h3.b-catalogs__header Введите параметры диска
+      form#dpf action='/disks'
+        .g-out.b-block.b-catalogs__form
+          .g-out.b-inline.b-catalogs__group
+            select.optiongroup.width name='width'
+              option value='' Ширина
+              - ['4', '4.5', '5', '5.5', '6', '6.75', '7', '7.5', '8', '8.25', '8.5', '9', '9.5', '10', '10.5', '11', '11.75', '12', '13', '14', '15'].each do |width|
+                option data-id="#{width}" value="#{width}"
+                  = width
+
+
+          .g-out.b-inline.b-catalogs__group
+            select.optiongroup.diameter_diska name='diameter_diska'
+              option value='' Диаметр
+              - ['13', '14', '15', '16', '17', '18', '19', '19.5', '20', '21', '22', '22.5', '24'].each do |diameter_diska|
+                option data-id="#{diameter_diska}" value="#{diameter_diska}"
+                  = diameter_diska
+
+          .g-out.b-inline.b-catalogs__group
+            select.optiongroup.pcd name='pcd'
+              option value='' Крепеж
+              - [['3', '98'], ['3', '112'], ['3', '256'], ['4', '98'], ['4', '100'], ['4', '108'], ['4', '114.3'], ['5', '98'], ['5', '100'], ['5', '105'], ['5', '108'], ['5', '110'], ['5', '112'], ['5', '114.3'], ['5', '115'], ['5', '118'], ['5', '120']].each do |pcd|
+                option data-bolt-count="#{pcd[0]}" data-bolt-distance="#{pcd[1]}" value="#{pcd}"
+                  = "#{pcd[0]}x#{pcd[1]}"
+
+          .g-out.b-inline.b-catalogs__group
+            select.optiongroup.et name='et'
+              option value='' Вылет
+              - ['-70', '-20', '-15', '-12', '-10', '-5', '0', '2', '5', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '37.5', '38', '39', '40', '41', '41.3', '41.5', '42', '43', '44', '45', '45.5', '46', '47', '47.5', '48', '49', '50', '50.8', '51', '52', '52.5', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '70', '105', '114', '120', '121.5', '122.5', '128.5', '130', '134', '135', '138', '138.5', '140', '143', '149', '150', '150.5', '156.5', '157', '161', '163', '201', '203'].each do |et|
+                option data-id="#{et}" value="#{et}"
+                  = et
+
+
+          .g-out.b-inline.b-catalogs__group
+            select.optiongroup.diameter name='diameter'
+              option value='' Центр. отверстие
+              - ['54.1', '56.1', '56.6', '56.7', '57.1', '58.1', '58.5', '58.6', '60.1', '63.3', '63.35', '63.4', '64.1', '65.06', '65.1', '66.1', '66.45', '66.5', '66.6', '67.1', '67.2', '68', '69.1', '70', '70.1', '70.2', '70.3', '71', '71.1', '71.4', '71.5', '71.58', '71.6', '72', '72.5', '72.56', '72.6', '73.1', '74', '74.1', '75', '75.1', '76', '76.1', '77.8', '77.9', '78.1', '79', '82', '84', '84.1', '89.1', '92.3', '92.5', '93.1', '95.3', '95.6', '98', '98.5', '100.1', '104.1', '106', '106.1', '106.2', '106.5', '107.1', '107.5', '107.6', '108.1', '108.5', '108.6', '109.5', '109.7', '110.1', '110.2', '110.6', '111.6', '112', '113.1', '161', '176', '202', '220', '221', '281'].each do |diameter|
+                option data-id="#{diameter}" value="#{diameter}"
+                  = diameter
+
+          input.b-inline.b-catalogs__input.b-catalogs__disk-cat data-params='true' type='submit' name='vote' onclick="yaCounter25849658.reachGoal('click_select'); return true"  value='Подобрать'
+
+
+        .b-block.b-catalogs__superform
+          .b-catalogs_price
+            div
+              span Цена:
+            .b-form_input-group
+              .input-group-addon От
+              input#dpl type='text' name='price_low' data-click-empty='1000'
+            .b-form_input-group
+              .input-group-addon До
+              input#dph type='text' name='price_high' data-click-empty='100000'
+            .b-form__price-bar.l-col-6
+              #disk-price-bar
+            div
+              input type='checkbox' name='only_present' id='opc'
+              label for='opc'
+                span
+                = "Выводить товары в наличии"
+          h3 Производитель
+          .l-row
+            .l-col.l-col-11
+              ul.b-form__brand-list
+                - DiskBrandList.all.each_with_index do |brand, i|
+                  li
+                    input type='checkbox' name='brands[]' value="#{brand}" id="dchk_#{i}"
+                    label for="dchk_#{i}"
+                      span
+                      = brand
+            .l-col.l-col-4
+              input.b-inline.b-catalogs__input.b-catalogs__find_disk type='submit' value='Подобрать диски' data-params='true'
+              div
+                = link_to 'Очистить форму и начать заново', '#', class: 'b-form_action-link'
+        div.b-form_radius-filter
+          = 'Подбор литых дисков по диаметру: '
+          a href="/ru/catalog/litye-diski-r13/"= 'R13'
+          = ', '
+          a href="/ru/catalog/litye-diski-r14/"= 'R14'
+          = ', '
+          a href="/ru/catalog/litye-diski-r15/"= 'R15'
+          = ', '
+          a href="/ru/catalog/litye-diski-r16/"= 'R16'
+          = ', '
+          a href="/ru/catalog/litye-diski-r17/"= 'R17'
+          = ', '
+          a href="/ru/catalog/litye-diski-r17_5/"= 'R17.5'
+          = ', '
+          a href="/ru/catalog/litye-diski-r18/"= 'R18'
+          = ', '
+          a href="/ru/catalog/litye-diski-r19/"= 'R19'
+          = ', '
+          a href="/ru/catalog/litye-diski-r19_5/"= 'R19.5'
+          = ', '
+          a href="/ru/catalog/litye-diski-r20/"= 'R20'
+          = ', '
+          a href="/ru/catalog/litye-diski-r21/"= 'R21'
+          = ', '
+          a href="/ru/catalog/litye-diski-r22/"= 'R22'
+          = ', '
+          a href="/ru/catalog/litye-diski-r22_5/"= 'R22.5'
+          = ', '
+          a href="/ru/catalog/litye-diski-r24/"= 'R24'
+        span.b-block.b-catalogs__drop Загрузка...
+
+
+
+    .b-selection__more.b-disk-selection__more
+      .b-selection__wrap_wrap
+
+        = render partial: 'home/disks', locals: {disks: @disks}
+  .scrollto#tyre-catalog
+    = render 'tire_catalogue'
+  .l-why
+    .l-base
+      .b-block.g-block-header
+        = image_tag 'arrow-left.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+        h2.b-inline.g-block-header__text ПОЧЕМУ ВЫ ЕЩЕ НЕ СДЕЛАЛИ ЗАКАЗ?
+        = image_tag 'arrow-right.png', width: 24, height: 12, class: 'b-inline g-block-header__arrow'
+
+      .b-inline.b-why
+        h5.b-block.b-why__header Я не доверяю интернет-магазинам
+        p.b-block.b-why__text Мы заработаем гораздо больше, если Вы останетесь довольны, оставите нам свой отзыв и порекомендуете нас друзьям. А также, у Вас на руках останется документ, подтверждающий факт оплаты, с нашими полными реквизитами, адресом, и контактами.
+        = image_tag 'benefits/line.png', width: 52, height: 1, class: 'b-inline b-benefit__line'
+      .b-inline.b-why.b-why_left
+        h5.b-block.b-why__header Мне могут прислать не то, что я заказывал
+        p.b-block.b-why__text Мы лично проверяем соответствие товара и потому даем гарантию: в случае несоответствия товара мы вернем Вам деньги! Так что же Вы теряете? Заказывайте!
+        = image_tag 'benefits/line.png', width: 52, height: 1, class: 'b-inline b-benefit__line'
+      .b-inline.b-why
+        h5.b-block.b-why__header Я не знаю, какие диски подойдут моей машине
+        p.b-block.b-why__text Не переживайте! Наши менеджеры знают свое дело. Они подберут именно те диски, которые подойдут Вашей машине. Свяжитесь с нашим отделом продаж прямо сейчас!
+      .b-inline.b-why.b-why_left
+        h5.b-block.b-why__header Я просто не знаю
+        p.b-block.b-why__text Так чего Вы ждете? Закажите каталог товаров, который составляется абсолютно бесплатно и если Вам что-то понравится, у Вас появится причина заменить старую рухлядь на новые диски. Преобразите свой автомобиль!
+
+  footer.l-footer
+    .l-base.scrollto#contacts
+      .b-inline.b-footer__left
+        .b-block.b-header__action.b-footer__action
+          h2.b-block.b-header__action-header.b-footer__action-header ВНИМАНИЕ!
+          .g-out.b-block.b-header__counter
+            span.b-block.b-header__counter-header До конца акции осталось:
+            .g-out.b-block.b-header__counter-wrap
+
+        .b-inline.b-header__pick-up.b-footer__pick-up
+          h3.b-block.b-header__pick-up-header Подберите диски по авто
+          a.b-block.b-header__button_wrap href='#catalogs'
+            .b-header__button
+              = image_tag 'header/arrow-left.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+              h4.b-inline.b-header__button-text Подобрать диски
+              = image_tag 'header/arrow-right.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+          h3.b-block.b-header__pick-up-header Подберите шины по авто
+          a.b-block.b-header__button_wrap href='#tyre-catalog'
+            .b-header__button
+              = image_tag 'header/arrow-left.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+              h4.b-inline.b-header__button-text Подобрать шины
+              = image_tag 'header/arrow-right.png', width: 24, height: 12, class: 'b-inline b-header__button-arrow'
+
+      .b-inline.b-footer__info
+        h2.b-block.b-footer__info-header Контактная информация
+        .b-block.b-footer__contact
+          span.b-block.b-footer__contact-text Телефон:
+          h2.b-block.b-footer__contact-info.b-footer__contact-phone +7 (499) 994-84-54
+
+        .b-block.b-footer__contact
+          span.b-block.b-footer__contact-text Адрес:
+          span.b-block.b-footer__contact-info Электродная ул., д.14 стр.2
+
+        a.b-block.b-footer__contact-mail href='mailto://info@zedisk.ru' info@wheel-mart.ru
+        a.b-block.b-footer__contact-vk href='https://vk.com/wheelmart' Wheelmart
+        span.b-block.b-footer__contact-inn ИНН&nbsp;772387392750 ОГРНИП&nbsp;314774613300962
+        span.b-block.b-footer__contact-inn.b-footer__contact-copyright © 2013–#{Date.today.year} Все права защищены.
+
+        .b-made-by
+          a.b-made-by__link href='https://www.railsmob.ru/' title='Разработка на Ruby on Rails'
+            img.b-made-by__logo src='#{asset_path("railsmob.png")}' width='100' alt='Railsmob'
+
+  .l-form
+    figure.b-center.b-block.b-form
+      h2.b-inline.b-form__header.b-form__header_buy Оставьте заявку на&nbsp;приобретение литых дисков
+      h2.b-inline.b-form__header.b-form__header_reservation Оставьте заявку на&nbsp;бронирование литых дисков
+      a.b-form__close href='#'
+      h3.b-block.b-form__text Вам перезвонят в&nbsp;течение 15&nbsp;минут
+      = form_tag '/order', method: :post, class: 'b-block b-form__form'
+        input#disk-id type='hidden' name='order[id]' value=''
+        input#order-type type='hidden' name='order[type]' value=''
+        input.b-block.b-form__text-field placeholder='Ваше имя' required='required' name='order[name]' type='text' value=''
+        input.b-block.b-form__text-field.b-form__text-field_margin placeholder='Контактный телефон' required='required' name='order[phone]' type='text' value=''
+        a.b-block.b-header__button_wrap.b-form__submit href='#'
+          .b-header__button
+            = image_tag 'form/arrow-left.png', width: 24, height: 12, class: 'b-inline b-form__button-arrow'
+            h4.b-inline.b-header__button-text.b-form__button-text Отправить
+            = image_tag 'form/arrow-right.png', width: 24, height: 12, class: 'b-inline b-form__button-arrow'
+
+        input.b-form__submit_hidden type='submit'
+
+  - if notice
+    .l-form.l-form_finished
+      figure.b-center.b-block.b-form.b-form_finished
+        h3.b-block.b-form__text= raw notice
+        a.b-form__close href='#'
+
+  javascript:
+    (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25849658 = new Ya.Metrika({id:25849658}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+
+    (function(){
+    var widget_id = 731322;
+    _shcp =[{widget_id : widget_id}];
+    var lang =(navigator.language || navigator.systemLanguage 
+    || navigator.userLanguage ||"en")
+    .substr(0,2).toLowerCase();
+    var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+    var hcc = document.createElement("script");
+    hcc.type ="text/javascript";
+    hcc.async =true;
+    hcc.src =("https:"== document.location.protocol ?"https":"http")
+    +"://"+ url;
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hcc, s.nextSibling);
+    })();

@@ -1,0 +1,5 @@
+<option value='year'>Год</option>
+
+<% @years.each do |year| %>
+  <option data-id='<%= year.id %>' value="<%= year.year %>"><%= year.year %></option>
+<% end %>
